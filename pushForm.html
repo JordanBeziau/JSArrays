@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Push Form</title>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('input'),
+            button = document.getElementById('button'),
+            petsList = document.getElementById('pets-list');
+
+      const pets = [];
+
+      button.addEventListener('click', () => {
+        if (input.value.length > 0) {
+          pets.push(input.value);
+          input.value = "";
+          render();
+        }
+      });
+
+      function render() {
+        petsList.innerHTML = pets
+          .map(pet => `  <li>${pet}</li>`)
+          .join('\n');
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <input type="text" id="input">
+
+  <button type="button" id="button">Add</button>
+
+  <ul id="pets-list">
+
+  </ul>
+
+</body>
+</html>
