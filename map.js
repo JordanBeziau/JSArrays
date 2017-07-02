@@ -38,7 +38,7 @@ mapped = persons.map(person => {
     firstname: person.firstname,
     lastname: person.lastname,
     fullname: person.firstname + ' ' + person.lastname
-  }
+  };
 });
 
 var items = mapped.map(item => item.fullname);
